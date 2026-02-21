@@ -156,7 +156,25 @@ res.data.slice(0, 3).forEach((el, index) => {
 
 
 
- 
+const socialMedia = [
+    { name: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/?locale=uk_UA' },
+    { name: 'Twitter', icon: 'fab fa-twitter', link: 'https://twitter.com' },
+    { name: 'Instagram', icon: 'fab fa-instagram', link: 'https://instagram.com' },
+    { name: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtube.com' } 
+];
+
+function renderSocialLinks() {
+    const container = $('#social-links-container');
+    
+    socialMedia.forEach(social => {
+        const linkHtml = `<a href="${social.link}" target="_blank">
+                            <i class="${social.icon}"></i> ${social.name}
+                          </a>`;
+        container.append(linkHtml);
+    });
+}
+
+renderSocialLinks();
 
 // // 7. Завантаження товарів
 // axios.get('http://localhost:3000/all-products')

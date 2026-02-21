@@ -1,0 +1,237 @@
+ 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="./style.css">
+<!-- Axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js" integrity="sha512-WkZrEcQ5LMyNy6Y2PQf+Tu3vMcsmKKRKuPXtJSTHQJ3mpuvLRlA5dlDDhrrcXfyWr6Z/y3wIMfjfqVFO/gDZYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+ 
+
+    
+</head>
+<body>
+    <div class="wrap">
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">Panto</div>
+            <ul class="nav-links">
+                <li><a href="#">Furniture ▾</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="cart-wrapper">
+                <div class="cart-icon" id="cartBtn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" width="24" alt="cart">
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="cart-sidebar" id="cartSidebar">
+                    <h3>Ваше замовлення</h3>
+                    <div class="cart-items">
+                        <p class="empty-msg">Кошик порожній</p>
+                        <div class="cart-container"></div>
+                    </div>
+                    <form id="orderForm" class="order-form">
+                        <input type="email" placeholder="Електронна адреса" required>
+                        <input type="text" placeholder="Ваше ім'я" required>
+                        <button type="submit" class="order-btn">Оформити</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="hero-content">
+            <h1>Make Your Interior More <br> Minimalistic & Modern</h1>
+            <p>Turn your room with panto into a lot more minimalist and modern with ease and speed</p>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search furniture">
+                <button class="search-btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+                    <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
+                  </svg></button>
+            </div>
+        </div>
+    
+        <div class="hotspot" style="top: 65%; left: 20%;">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-content">Комфортне крісло</div>
+        </div>
+        <div class="hotspot" style="top: 75%; left: 55%;">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-content">Стильний столик</div>
+        </div>
+    </header>
+    
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Дякуємо!</h3>
+            <p>Ваше замовлення оформлено.</p>
+            <button onclick="closeModal()">Закрити</button>
+        </div>
+    </div>
+
+
+
+
+ 
+<section class="Why-Choosing-Us"> 
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="title-col">Why Choosing Us</div>
+
+            <div class="features-grid">
+                <div class="features-item">
+                    <h3>Luxury facilities</h3>
+                    <p>The advantage of hiring a workspace with us is that gives you comfortable service and all-around facilities.</p>
+                    <a href="#" class="more-info">More Info <span class="arrow">→</span></a>
+                </div>
+
+                <div class="features-item">
+                    <h3>Affordable Price</h3>
+                    <p>You can get a workspace of the highest quality at an affordable price and still enjoy the facilities that are only here.</p>
+                    <a href="#" class="more-info">More Info <span class="arrow">→</span></a>
+                </div>
+
+                <div class="features-item">
+                    <h3>Many Choices</h3>
+                    <p>We provide many unique workspace choices so that you can choose the workspace to your liking.</p>
+                    <a href="#" class="more-info">More Info <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ 
+
+<section class="experience">
+    <div class="experience-container">
+      
+      <div class="image-section">
+        <div class="shape shape-top"></div>
+        <div class="shape shape-right"></div>
+        <div class="main-img-container">
+          <img src="./img/Rectangle 1446 (2).png" alt="Interior">
+        </div>
+      </div>
+  
+      <div class="text-section">
+        <p class="tagline">EXPERIENCES</p>
+        <h1>We Provide You The <br> Best Experience</h1>
+        <p class="description">
+          You don't have to worry about the result because all of these interiors are made by people who are professionals in their fields with an elegant and luxurious style and with premium quality materials
+        </p>
+        <a href="#" class="more-link">More Info <span>&rarr;</span></a>
+      </div>
+  
+    </div>
+  </section>
+
+  
+  <section class="furniture-section">
+    <div class="content-side">
+      <span class="label">Materials</span>
+      <h1>Very Serious <br> Materials For Making <br> Furniture</h1>
+      <p>
+        Because panto was very serious about designing furniture for our 
+        environment, using a very expensive and famous capital but at a 
+        relatively low price.
+      </p>
+      <a href="#" class="more-info">
+        More Info 
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  
+    <div class="image-side">
+      <div class="column-left">
+        <div class="img-wrapper small"><img src="./img/Group 48095419.png" alt="Furniture 1"></div>
+        <div class="img-wrapper medium"><img src="./img/Group 48095417.png" alt="Furniture 2"></div>
+      </div>
+      <div class="column-right">
+        <div class="img-wrapper large"><img src="./img/Rectangle 1446 (1).png" alt="Furniture 3"></div>
+      </div>
+    </div>
+  </section>
+
+<section class="best-selling">
+    <h2>Best Selling Product</h2>
+
+    <div class="categories">
+        <button class="cat-btn active">Chair</button>
+        <button class="cat-btn">Beds</button>
+        <button class="cat-btn">Sofa</button>
+        <button class="cat-btn">Lamp</button>
+    </div>
+
+    
+
+    <div class="products-container"></div>
+    <div class="view-all">
+        <a href="#">View All &rarr;</a>
+    </div>
+</section>
+
+ 
+<section class="testimonials-section">
+  <p class="subtitle">TESTIMONIALS</p>
+  <h2 class="section-title">Our Client Reviews</h2>
+  
+  <div class="testimonials-container">
+      </div>
+  
+  
+</section>
+
+ 
+<footer class="main-footer">
+  <div class="footer-container">
+      <div class="footer-info">
+          <h2 class="footer-logo">Panto</h2>
+          <p>The advantage of hiring a workspace with us is that gives you comfortable service and all-around facilities.</p>
+      </div>
+
+      <div class="footer-links">
+          <div class="footer-col">
+              <h4>Services</h4>
+              <a href="#">Email Marketing</a>
+              <a href="#">Campaigns</a>
+              <a href="#">Branding</a>
+          </div>
+          <div class="footer-col">
+              <h4>Furniture</h4>
+              <a href="#">Beds</a>
+              <a href="#">Chair</a>
+              <a href="#">All</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col" id="social-links-container">
+              <h4>Follow Us</h4>
+              </div>
+               
+          </div>
+      </div>
+  </div>
+  
+  <div class="footer-bottom">
+      <p>Copyright © 2021</p>
+      <div class="bottom-links">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+      </div>
+  </div>
+</footer>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>

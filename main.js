@@ -95,7 +95,7 @@ $('#orderForm').on('submit', function(e) {
 function closeModal() { $('#successModal').hide(); }
 
  // 7. 
-axios.get('http://localhost:3000/all-products')
+axios.get('https://panto-admin-2.onrender.com/all-products')
 .then(res => {
     for(let el of res.data){
         let card = `
@@ -120,7 +120,6 @@ $('.testimonials-container').empty();
 const customAvatars = [
      
 ];
-
 
 const bgImages = [
     "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=600",
@@ -154,12 +153,51 @@ res.data.slice(0, 3).forEach((el, index) => {
 });
 
 
+axios.get('http://localhost:3000/social')
+
+.then(res => {
+    for(let el of res.data){
+        let socialLink = `
+        <a href="${el.link}" target="_blank"><i class="${el.icon}"></i></a>
+        `;
+        $('.social-list').append(socialLink);
+    }
 
 
- 
- 
+});
 
- 
+axios.get('https://panto-admin-2.onrender.com/social')
+.then(res=>{
+      const container = $('#social-links-container');
+    
+    (res.data).forEach(res => {
+        const linkHtml = `<a href="${res.link}" target="_blank">
+                            <i class="${res.icon}"></i> ${res.platform}
+                          </a>`;
+        container.append(linkHtml);
+    });
+})
+
+
+const socialMedia = [
+    { name: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/?locale=uk_UA' },
+    { name: 'Twitter', icon: 'fab fa-twitter', link: 'https://twitter.com' },
+    { name: 'Instagram', icon: 'fab fa-instagram', link: 'https://instagram.com' },
+    { name: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtube.com' } 
+];
+
+// function renderSocialLinks() {
+//     const container = $('#social-links-container');
+    
+//     socialMedia.forEach(social => {
+//         const linkHtml = `<a href="${social.link}" target="_blank">
+//                             <i class="${social.icon}"></i> ${social.name}
+//                           </a>`;
+//         container.append(linkHtml);
+//     });
+// }
+
+// renderSocialLinks();
 
 // // 7. Завантаження товарів
 // axios.get('http://localhost:3000/all-products')

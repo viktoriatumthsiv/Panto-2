@@ -121,6 +121,7 @@ const customAvatars = [
      
 ];
 
+
 const bgImages = [
     "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=600",
     "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600",
@@ -153,41 +154,12 @@ res.data.slice(0, 3).forEach((el, index) => {
 });
 
 
-axios.get('http://localhost:3000/social')
-
-.then(res => {
-    for(let el of res.data){
-        let socialLink = `
-        <a href="${el.link}" target="_blank"><i class="${el.icon}"></i></a>
-        `;
-        $('.social-list').append(socialLink);
-    }
 
 
-});
+ 
+ 
 
-
-
-
-const socialMedia = [
-    { name: 'Facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/?locale=uk_UA' },
-    { name: 'Twitter', icon: 'fab fa-twitter', link: 'https://twitter.com' },
-    { name: 'Instagram', icon: 'fab fa-instagram', link: 'https://instagram.com' },
-    { name: 'YouTube', icon: 'fab fa-youtube', link: 'https://youtube.com' } 
-];
-
-function renderSocialLinks() {
-    const container = $('#social-links-container');
-    
-    socialMedia.forEach(social => {
-        const linkHtml = `<a href="${social.link}" target="_blank">
-                            <i class="${social.icon}"></i> ${social.name}
-                          </a>`;
-        container.append(linkHtml);
-    });
-}
-
-renderSocialLinks();
+ 
 
 // // 7. Завантаження товарів
 // axios.get('http://localhost:3000/all-products')

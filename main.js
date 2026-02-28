@@ -153,6 +153,19 @@ res.data.slice(0, 3).forEach((el, index) => {
 });
 
 
+axios.get('http://localhost:3000/social')
+
+.then(res => {
+    for(let el of res.data){
+        let socialLink = `
+        <a href="${el.link}" target="_blank"><i class="${el.icon}"></i></a>
+        `;
+        $('.social-list').append(socialLink);
+    }
+
+
+});
+
 
 
 
